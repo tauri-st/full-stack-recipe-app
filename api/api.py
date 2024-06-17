@@ -42,6 +42,11 @@ def get_all_recipes():
 def add_recipe():
   #parse data collected from frontend form
   data = request.get_json()
+  #Add error code to feedback to user if any fields left blank
+  required_fields = ['title', 'ingredients', 'instructions', 'servings', 'description', 'image_url']
+  for field in required_fields:
+    if field not in data or data[field] == "":
+      return jsonify({'error': f"Missing required field: '{field}'"}), 400
   #create a new recipe record with the data
   new_recipe = Recipe(
     title=data['title'],
