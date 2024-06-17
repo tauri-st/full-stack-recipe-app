@@ -53,6 +53,16 @@ def add_recipe():
   )
   db.session.add(new_recipe)
   db.session.commit()
+  #represent the data as a dictionary to be transformed into JSON
+  new_recipe_data = {
+    'id': new_recipe.id,
+    'title': new_recipe.title,
+    'ingredients': new_recipe.ingredients,
+    'instructions': new_recipe.instructions,
+    'servings': new_recipe.servings,
+    'description': new_recipe.description,
+    'image_url': new_recipe.image_url
+  }
 
 if __name__ == '__main__':
   app.run(debug=True)
