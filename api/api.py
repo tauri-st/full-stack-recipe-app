@@ -63,6 +63,8 @@ def add_recipe():
     'description': new_recipe.description,
     'image_url': new_recipe.image_url
   }
+  #return the data in JSON format to be passed back to frontend
+  return jsonify({'message': 'Recipe added successfully', 'recipe': new_recipe_data})
 
 if __name__ == '__main__':
   app.run(debug=True)
