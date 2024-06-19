@@ -15,4 +15,4 @@ const RecipeExerpts = ( {recipe} ) => {
     )
 }
 
-export default
+export default RecipeExerpts
