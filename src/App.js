@@ -21,11 +21,18 @@ function App() {
         */
         const request = await fetch("/api/recipes");
         console.log(request);
+        /** 
+        * ? if (response.ok) was another way Ann checked this,
+        * ? did we learn about this somewhere? 
+        */
         const data = await request.json();
         if (request.status === 200) {
           setRecipes(data);
           setStatus("success");
         }
+        /**
+         * ? She also put an else statement that consoles "could not fetch", is this redundant with catch clause?
+        */
         console.log(recipes);
       }
       catch (error) {
