@@ -9,7 +9,7 @@ function App() {
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchAllRecipes = async () => {
       try {
         setStatus("loading");
         /* 
@@ -36,7 +36,7 @@ function App() {
     };
 
     useEffect(() => {
-      fetchData();
+      fetchAllRecipes();
     }, []);
   })
 
