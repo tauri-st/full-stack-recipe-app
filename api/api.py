@@ -21,7 +21,7 @@ class Recipe(db.Model):
   #db.create_all()
   #db.session.commit()
 
-#Fetch all recipes
+# Fetch all recipes
 @app.route("/api/recipes", methods=["GET"])
 def get_all_recipes():
   recipes = Recipe.query.all()
@@ -40,14 +40,14 @@ def get_all_recipes():
 
 @app.route('/api/recipes', methods=['POST'])
 def add_recipe():
-  #parse data collected from frontend form
+  # parse data collected from frontend form
   data = request.get_json()
-  #Add error code to feedback to user if any fields left blank
+  # Add error code to feedback to user if any fields left blank
   required_fields = ['title', 'ingredients', 'instructions', 'servings', 'description', 'image_url']
   for field in required_fields:
     if field not in data or data[field] == "":
       return jsonify({'error': f"Missing required field: '{field}'"}), 400
-  #create a new recipe record with the data
+  # create a new recipe record with the data
   new_recipe = Recipe(
     title=data['title'],
     ingredients=data['ingredients'],
@@ -58,7 +58,7 @@ def add_recipe():
   )
   db.session.add(new_recipe)
   db.session.commit()
-  #represent the data as a dictionary to be transformed into JSON
+  # represent the data as a dictionary to be transformed into JSON
   new_recipe_data = {
     'id': new_recipe.id,
     'title': new_recipe.title,
@@ -68,16 +68,16 @@ def add_recipe():
     'description': new_recipe.description,
     'image_url': new_recipe.image_url
   }
-  #return the data in JSON format to be passed back to frontend
+  # return the data in JSON format to be passed back to frontend
   return jsonify({'message': 'Recipe added successfully', 'recipe': new_recipe_data})
 
-#<int:recipe_id> is a placeholder for a variable,
-#the recipe id in integer format like /api/recipes/3
+# <int:recipe_id> is a placeholder for a variable,
+# the recipe id in integer format like /api/recipes/3
 @app.route('/api/recipes/<int:recipe_id>', methods=['PUT'])
 def update_recipe(recipe_id):
-  #fetch the recipe that we want to update
+  # fetch the recipe that we want to update
   recipe = Recipe.query.get(recipe_id)
-  #if not in database
+  # if not in database
   if not recipe:
     return jsonify({'error': 'Recipe not found'}), 404
   data = request.get_json()
@@ -95,6 +95,7 @@ def update_recipe(recipe_id):
   
   db.session.commit()
  
+  # Serialize the updated recipe and return as JSON
   updated_recipe = {
     'id': recipe.id,
     'title': recipe.title,
