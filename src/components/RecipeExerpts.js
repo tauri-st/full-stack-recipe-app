@@ -7,10 +7,10 @@ import React from 'react';
 const RecipeExerpts = ( {recipe} ) => {
     return (
         <article className="recipe-card">
-            <figure></figure>
-            <h2></h2>
-            <p className="flex-spacing"></p>
-            <button></button>
+            <figure><img src={recipe.image_url} alt="recipe image"/></figure>
+            <h2>{recipe.title}</h2>
+            <p className="flex-spacing">Description: {recipe.description}</p>
+            <button>View</button>
         </article>
     )
 }
