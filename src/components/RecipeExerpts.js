@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-const = ( {recipe} ) => {
+const RecipeExerpts = ( {recipe} ) => {
     return (
         <article className="recipe-card">
             <figure></figure>
