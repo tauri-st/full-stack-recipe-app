@@ -51,8 +51,8 @@ function App() {
         <p>"Something went wrong"</p>
       )}
       {status === "loading" && <Loader />}
-      {status === "success" }
-      <p>Your recipes here! </p>
+      {status === "success"}
+      {JSON.stringify(recipes)}
     </div>
   );
 }
