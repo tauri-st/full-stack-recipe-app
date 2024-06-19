@@ -5,7 +5,6 @@ import "./App.css";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
-  const [data, setData] = useState({});
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
@@ -24,10 +23,10 @@ function App() {
         console.log(request);
         const {results} = await request.json();
         if (request.status === 200) {
-          setData(results[0]);
+          setRecipes(results[0]);
           setStatus("success");
         }
-        console.log(data);
+        console.log(recipes);
       }
       catch (error) {
         console.log("Something went wrong", error)
