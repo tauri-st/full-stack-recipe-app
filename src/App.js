@@ -34,7 +34,7 @@ function App() {
       }
     };
 
-      fetchAllRecipes();
+    fetchAllRecipes();
   }, []);
 
   return (
