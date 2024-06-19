@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { Loader } from "react-feather";
-import RecipeExerpts from "./components/RecipeExerpts";
+import RecipeExerpt from "./components/RecipeExerpt";
 import "./App.css";
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
       {status === "success"}
       <div className="recipe-list">
         {recipes.map((recipe) => {
-          return <RecipeExerpts key={recipe.id} recipe={recipe}/>
+          return <RecipeExerpt key={recipe.id} recipe={recipe}/>
         })};
       </div>
     </div>

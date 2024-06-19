@@ -4,7 +4,7 @@
 
 import React from 'react';
 
-const RecipeExerpts = ( {recipe} ) => {
+const RecipeExerpt = ( {recipe} ) => {
     return (
         <article className="recipe-card">
             <figure><img src={recipe.image_url} alt="recipe image"/></figure>
@@ -15,4 +15,4 @@ const RecipeExerpts = ( {recipe} ) => {
     )
 }
 
-export default RecipeExerpts
+export default RecipeExerpt
