@@ -4,9 +4,14 @@
 
 import React from 'react';
 
-const = () => {
+const = ( {recipe} ) => {
     return (
-        <div></div>
+        <article className="recipe-card">
+            <figure></figure>
+            <h2></h2>
+            <p className="flex-spacing"></p>
+            <button></button>
+        </article>
     )
 }
 
