@@ -73,7 +73,7 @@ def add_recipe():
 
 #<int:recipe_id> is a placeholder for a variable,
 #the recipe id in integer format like /api/recipes/3
-@app.route('/api/recipes/<int:recipe_id>')
+@app.route('/api/recipes/<int:recipe_id>', methods=['PUT'])
 def update_recipe(recipe_id):
   #fetch the recipe that we want to update
   recipe = Recipe.query.get(recipe_id)
@@ -86,24 +86,25 @@ def update_recipe(recipe_id):
   for field in required_fields:
     if field not in data or data[field] == "":
       return jsonify({'error': f"Missing required field: '{field}'"}), 400
-    recipe.title = data['title']
-    recipe.ingredients = data['ingredients']
-    recipe.instructions = data['instructions']
-    recipe.servings = data['servings']
-    recipe.description = data['description']
-    recipe.image_url = data['image_url']
-    db.session.commit()
+  recipe.title = data['title']
+  recipe.ingredients = data['ingredients']
+  recipe.instructions = data['instructions']
+  recipe.servings = data['servings']
+  recipe.description = data['description']
+  recipe.image_url = data['image_url']
+  
+  db.session.commit()
  
-    updated_recipe = {
-      'id': recipe.id,
-      'title': recipe.title,
-      'ingredients': recipe.ingredients,
-      'instructions': recipe.instructions,
-      'servings': recipe.servings,
-      'description': recipe.description,
-      'image_url': recipe.image_url
-    }
-    return jsonify({'message': 'Recipe updated successfully', 'recipe': updated_recipe})
+  updated_recipe = {
+    'id': recipe.id,
+    'title': recipe.title,
+    'ingredients': recipe.ingredients,
+    'instructions': recipe.instructions,
+    'servings': recipe.servings,
+    'description': recipe.description,
+    'image_url': recipe.image_url
+  }
+  return jsonify({'message': 'Recipe updated successfully', 'recipe': updated_recipe})
 
 if __name__ == '__main__':
   app.run(debug=True)
