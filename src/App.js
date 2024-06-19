@@ -35,10 +35,8 @@ function App() {
       }
     };
 
-    useEffect(() => {
       fetchAllRecipes();
-    }, []);
-  })
+  }, []);
 
   return (
     <div className='recipe-app'>
