@@ -21,9 +21,9 @@ function App() {
         */
         const request = await fetch("/api/recipes");
         console.log(request);
-        const {results} = await request.json();
+        const data = await request.json();
         if (request.status === 200) {
-          setRecipes(results[0]);
+          setRecipes(data);
           setStatus("success");
         }
         console.log(recipes);
