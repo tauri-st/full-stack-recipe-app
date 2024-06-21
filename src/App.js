@@ -64,11 +64,12 @@ function App() {
       )}
       {status === "loading" && <Loader />}
       {status === "success"}
-      <div className="recipe-list">
+      {!selectedRecipe && (
+        <div className="recipe-list">
         {recipes.map((recipe) => {
           return <RecipeExerpt key={recipe.id} recipe={recipe} handleSelectRecipe={handleSelectRecipe} />
         })};
-      </div>
+      </div>)}
     </div>
   );
 }
