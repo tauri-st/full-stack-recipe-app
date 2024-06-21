@@ -58,7 +58,7 @@ function App() {
   return (
     <div className='recipe-app'>
       <Header />
-      selectedRecipe !== null ? <RecipeFull onSubmit="handleSelectRecipe" onClick="handleUnselectRecipe" />
+      selectedRecipe !== null ? <RecipeFull selectedRecipe={selectedRecipe} handleUnselectRecipe={handleUnselectRecipe} />
       {status === "error" && (
         <p>"Something went wrong"</p>
       )}
