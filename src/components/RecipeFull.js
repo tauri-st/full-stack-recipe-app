@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RecipeFull = ( {selectedRecipe} ) => {
+const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
 
     return (
         <div className='recipe-details'>
@@ -12,7 +12,7 @@ const RecipeFull = ( {selectedRecipe} ) => {
                     <h2>{selectedRecipe.title}</h2>
                     <div className='button-container'>
                         <button className='edit-button'>Edit</button>
-                        <button className='cancel-button'>
+                        <button className='cancel-button' onClick={() => handleUnselectRecipe}>
                             Close
                         </button>
                         <button className='delete-button'>Delete</button>
