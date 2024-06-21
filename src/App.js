@@ -58,6 +58,7 @@ function App() {
   return (
     <div className='recipe-app'>
       <Header />
+      selectedRecipe !== null ? <RecipeFull onSubmit="handleSelectRecipe" onClick="handleUnselectRecipe" />
       {status === "error" && (
         <p>"Something went wrong"</p>
       )}
@@ -65,7 +66,7 @@ function App() {
       {status === "success"}
       <div className="recipe-list">
         {recipes.map((recipe) => {
-          return <RecipeExerpt key={recipe.id} recipe={recipe}/>
+          return <RecipeExerpt key={recipe.id} recipe={recipe} prop="handleSelectRecipe" />
         })};
       </div>
     </div>
