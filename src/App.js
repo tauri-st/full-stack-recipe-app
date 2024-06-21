@@ -66,7 +66,7 @@ function App() {
       {status === "success"}
       <div className="recipe-list">
         {recipes.map((recipe) => {
-          return <RecipeExerpt key={recipe.id} recipe={recipe} prop="handleSelectRecipe" />
+          return <RecipeExerpt key={recipe.id} recipe={recipe} handleSelectRecipe={handleSelectRecipe} />
         })};
       </div>
     </div>
