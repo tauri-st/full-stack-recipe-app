@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { Loader } from "react-feather";
 import RecipeExerpt from "./components/RecipeExerpt";
+import RecipeFull from "./components/RecipeFull";
 import "./App.css";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
   const [status, setStatus] = useState("loading");
+  const [selectedRecipe, setSelectedRecipe] = useState(null);
 
   useEffect(() => {
     const fetchAllRecipes = async () => {
@@ -44,6 +46,10 @@ function App() {
 
     fetchAllRecipes();
   }, []);
+
+  const handleSelectRecipe = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
 
   return (
     <div className='recipe-app'>
