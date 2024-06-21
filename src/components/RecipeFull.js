@@ -13,7 +13,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
                     <h2>{selectedRecipe.title}</h2>
                     <div className='button-container'>
                         <button className='edit-button'>Edit</button>
-                        <button className='cancel-button' onClick={() => handleUnselectRecipe}>
+                        <button className='cancel-button' onClick={handleUnselectRecipe}>
                             <X />
                             Close
                         </button>
