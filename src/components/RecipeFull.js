@@ -1,4 +1,5 @@
 import React from 'react';
+import { X } from "react-feather"
 
 const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
 
@@ -13,6 +14,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
                     <div className='button-container'>
                         <button className='edit-button'>Edit</button>
                         <button className='cancel-button' onClick={() => handleUnselectRecipe}>
+                            <X />
                             Close
                         </button>
                         <button className='delete-button'>Delete</button>
