@@ -1,14 +1,14 @@
 import React from 'react';
 
-const RecipeFull = (  ) => {
+const RecipeFull = ( {recipe} ) => {
     return (
         <div className='recipe-details'>
             <article>
                 <header>
                     <figure>
-                        <img />
+                        <img src={recipe.image_url} alt={recipe.title}/>
                     </figure>
-                    <h2>{}</h2>
+                    <h2>{recipe.title}</h2>
                     <div className='button-container'>
                         <button className='edit-button'>Edit</button>
                         <button className='cancel-button'>
@@ -19,7 +19,7 @@ const RecipeFull = (  ) => {
                 </header>
 
                 <h3>Description:</h3>
-                <p>{}</p>
+                <p>{recipe.description}</p>
 
                 <h3>Ingredients:</h3>
 
@@ -28,9 +28,9 @@ const RecipeFull = (  ) => {
                 </ul>
                 <h3>Instructions:</h3>
 
-                <pre className='formatted-text'>{}</pre>
+                <pre className='formatted-text'>{recipe.instructions}</pre>
 
-                <h3>Servings: {}</h3>
+                <h3>Servings: {recipe.servings}</h3>
             </article>
         </div>
     )
