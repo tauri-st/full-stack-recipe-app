@@ -51,6 +51,10 @@ function App() {
     setSelectedRecipe(recipe);
   };
 
+  const handleUnselectRecipe = () => {
+    setSelectedRecipe(null);
+  };
+
   return (
     <div className='recipe-app'>
       <Header />
