@@ -1,6 +1,7 @@
 import React from 'react';
 
 const RecipeFull = ( {selectedRecipe} ) => {
+
     return (
         <div className='recipe-details'>
             <article>
@@ -24,6 +25,11 @@ const RecipeFull = ( {selectedRecipe} ) => {
                 <h3>Ingredients:</h3>
 
                 <ul className='ingredient-list'>
+                    {selectedRecipe.ingredients.split(",").map((ingredient, index) =>
+                        <li className="ingredient" key={index}>
+                            {ingredient}
+                        </li>
+                    )}
 
                 </ul>
                 <h3>Instructions:</h3>
