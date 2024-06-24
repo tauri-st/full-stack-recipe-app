@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import { Loader } from "react-feather";
 import RecipeExerpt from "./components/RecipeExerpt";
 import RecipeFull from "./components/RecipeFull";
-import NewRecipeForm from "NewRecipeForm";
+import NewRecipeForm from "./components/NewRecipeForm";
 import "./App.css";
 
 function App() {
