@@ -67,6 +67,16 @@ function App() {
     setSelectedRecipe(null);
   };
 
+  const hideRecipeForm = () => {
+    setShowNewRecipeForm(false);
+  };
+
+  const showRecipeForm = () => {
+    setShowNewRecipeForm(true);
+    //show the recipe form OR the selected recipe, not both.
+    setSelectedRecipe(null);
+  };
+
   return (
     <div className='recipe-app'>
       <Header />
