@@ -80,7 +80,7 @@ function App() {
   return (
     <div className='recipe-app'>
       <Header />
-      {showNewRecipeForm && <NewRecipeForm />}
+      {showNewRecipeForm && <NewRecipeForm newRecipe={newRecipe} hideRecipeForm={hideRecipeForm} />}
       {selectedRecipe && <RecipeFull selectedRecipe={selectedRecipe} handleUnselectRecipe={handleUnselectRecipe} />}
       {status === "error" && (
         <p>"Something went wrong"</p>
