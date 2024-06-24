@@ -77,6 +77,19 @@ function App() {
     setSelectedRecipe(null);
   };
 
+  /**
+   * Destructure the name and value properties from the e.target object. 
+   * Pass an object to our setNewRecipe updater function, 
+   * spread into it the current state attributes …newRecipe, 
+   * overwriting the specific attribute that we are changing [name] 
+   * with the value of the input. 
+   * The [] around [name] indicates that it should accept a dynamic value
+  */
+  const onUpdateForm = (e) => {
+    const { name, value } = e.target;
+    setNewRecipe({ ...newRecipe, [name]: value });
+  };
+
   return (
     <div className='recipe-app'>
       <Header showRecipeForm={showRecipeForm} />
