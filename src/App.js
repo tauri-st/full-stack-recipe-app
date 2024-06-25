@@ -159,7 +159,7 @@ function App() {
       )}
       {status === "loading" && <Loader />}
       {status === "success"}
-      {!selectedRecipe && (
+      {!selectedRecipe && !showNewRecipeForm && (
         <div className="recipe-list">
         {recipes.map((recipe) => {
           return <RecipeExerpt key={recipe.id} recipe={recipe} handleSelectRecipe={handleSelectRecipe} />
