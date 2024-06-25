@@ -67,50 +67,46 @@ function App() {
    * ? Do we want to set the status in the if clause here?
   */
 
-  useEffect(() => {
-    const handleNewRecipe = async (e, newRecipe) => {
-      e.preventDefault();
-      try {
-        /*
-         * Pass an additional arguement {} that is an object called "options"
-         * Parse the JSON into a Python dictionary
-         * Create a new database record
-         * The API will send back the saved recipe as JSON with an ID assigned to it
-        */ 
-        const response = await fetch("/api/recipes", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(newRecipe)
+  const handleNewRecipe = async (e, newRecipe) => {
+    e.preventDefault();
+    try {
+      /*
+        * Pass an additional arguement {} that is an object called "options"
+        * Parse the JSON into a Python dictionary
+        * Create a new database record
+        * The API will send back the saved recipe as JSON with an ID assigned to it
+      */ 
+      const response = await fetch("/api/recipes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newRecipe)
+      });
+      if (response.ok) {
+        setStatus("success");
+        // * Send newRecipe data as JSON to our API endpoint
+        const data = await response.json();
+        setRecipes([...recipes, data.recipe]);
+        setShowNewRecipeForm(false);
+        setNewRecipe({
+          title: "",
+          ingredients: "",
+          instructions: "",
+          servings: 1,
+          description: "",
+          image_url: "https://images.pexels.com/photos/9986228/pexels-photo-9986228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         });
-        if (response.ok) {
-          setStatus("success");
-          // * Send newRecipe data as JSON to our API endpoint
-          const data = await response.json();
-          setRecipes([...recipes, data.recipe]);
-          setShowNewRecipeForm(false);
-          setNewRecipe({
-            title: "",
-            ingredients: "",
-            instructions: "",
-            servings: 1,
-            description: "",
-            image_url: "https://images.pexels.com/photos/9986228/pexels-photo-9986228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          });
-        }
-        else {
-          console.log("Whoops, could not add a recipe")
-        }
       }
-      catch (e) {
-        console.error("Something went wrong", e)
-        setStatus("error");
+      else {
+        console.log("Whoops, could not add a recipe")
       }
-    };
-
-    handleNewRecipe();
-  }, []);
+    }
+    catch (e) {
+      console.error("Something went wrong", e)
+      setStatus("error");
+    }
+  };
 
   const handleSelectRecipe = (recipe) => {
     setSelectedRecipe(recipe);
