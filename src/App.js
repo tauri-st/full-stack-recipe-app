@@ -90,6 +90,20 @@ function App() {
     setNewRecipe({ ...newRecipe, [name]: value });
   };
 
+  useEffect(() => {
+    const handleNewRecipe = async () => {
+      try {
+        
+      }
+      catch (error) {
+        console.log("Something went wrong", error)
+        setStatus("error");
+      }
+    };
+
+    handleNewRecipe();
+  }, []);
+
   return (
     <div className='recipe-app'>
       <Header showRecipeForm={showRecipeForm} />
