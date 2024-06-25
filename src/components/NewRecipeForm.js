@@ -7,7 +7,7 @@ const NewRecipeForm = ({newRecipe, hideRecipeForm, onUpdateForm, handleNewRecipe
         <h2>New Recipe</h2>
         <button className='cancel-button' onClick={hideRecipeForm}>Cancel</button>
  
-        <form onSubmit={handleNewRecipe(e, newRecipe)}>
+        <form onSubmit={(e) => handleNewRecipe(e, newRecipe)}>
           <label>Title</label>
           <input type='text' name='title' value={newRecipe.title} onChange={(e) => onUpdateForm(e)} required />
  
