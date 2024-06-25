@@ -36,22 +36,18 @@ function App() {
         */
         const request = await fetch("/api/recipes");
         console.log(request);
-        /** 
-        * ? if (response.ok) was another way Ann checked this,
-        * ? did we learn about this somewhere? 
-        */
         const data = await request.json();
-        if (request.status === 200) {
+        if (request.ok) {
           setRecipes(data);
           setStatus("success");
         }
-        /**
-         * ? She also put an else statement that consoles "could not fetch", is this redundant with catch clause?
-        */
+        else {
+          console.log("Could not fetch recipes");
+        }
         console.log(recipes);
       }
-      catch (error) {
-        console.log("Something went wrong", error)
+      catch (e) {
+        console.log("Something went wrong", e)
         setStatus("error");
       }
     };
@@ -60,10 +56,7 @@ function App() {
   }, []);
 
   /**
-   * TODO: Lookup if useEffect is necessary for this async
-   * TODO: Remove previous question comments
-   * TODO: Edit to response.ok in prev async
-   * TODO: Update console of error in other async, error -> e
+   * ? Why isn't useEffect is necessary for this async?
    * ? Do we want to set the status in the if clause here?
   */
 
