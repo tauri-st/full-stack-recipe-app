@@ -148,7 +148,7 @@ function App() {
         console.log("Whoops, could not update recipe")
       }
     }
-    catch (e) {S
+    catch (e) {
       console.error("Something went wrong", e)
       setStatus("error");
     }
