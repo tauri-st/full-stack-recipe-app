@@ -20,12 +20,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
                 />
             ) : (
                 <article>
-                    // full article stuff here
-                </article>
-            )}
-
-            <article>
-                <header>
+                    <header>
                     <figure>
                         <img src={selectedRecipe.image_url} alt={selectedRecipe.title}/>
                     </figure>
@@ -58,7 +53,9 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
                 <pre className='formatted-text'>{selectedRecipe.instructions}</pre>
 
                 <h3>Servings: {selectedRecipe.servings}</h3>
-            </article>
+                </article>
+            )}
+            
         </div>
     )
 }
