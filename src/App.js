@@ -148,11 +148,12 @@ function App() {
         console.log("Whoops, could not update recipe")
       }
     }
-    catch (e) {
+    catch (e) {S
       console.error("Something went wrong", e)
       setStatus("error");
-      selectedRecipe(null);
     }
+
+    selectedRecipe(null);
   };
 
   const handleSelectRecipe = (recipe) => {
