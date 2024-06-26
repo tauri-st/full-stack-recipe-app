@@ -188,7 +188,7 @@ function App() {
   const onUpdateForm = (e, action = "new") => {
     const { name, value } = e.target;
     if (action === "update") {
-      selectedRecipe({ ...selectedRecipe, [name]: value });
+      setSelectedRecipe({ ...selectedRecipe, [name]: value });
     }
     else if (action === "new") {
       setNewRecipe({ ...newRecipe, [name]: value });
