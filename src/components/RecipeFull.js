@@ -13,7 +13,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
     return (
         <div className='recipe-details'>
             
-	        {editing? (
+	        {editing ? (
                 <EditRecipeForm 
                     selectedRecipe={selectedRecipe}
                     handleCancel={handleCancel}
@@ -26,7 +26,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
                     </figure>
                     <h2>{selectedRecipe.title}</h2>
                     <div className='button-container'>
-                        <button className='edit-button' onClick={() => setEditing(false)}>Edit</button>
+                        <button className='edit-button' onClick={() => setEditing(true)}>Edit</button>
                         <button className='cancel-button' onClick={handleUnselectRecipe}>
                             <X />
                             Close
@@ -55,7 +55,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
                 <h3>Servings: {selectedRecipe.servings}</h3>
                 </article>
             )}
-            
+
         </div>
     )
 }
