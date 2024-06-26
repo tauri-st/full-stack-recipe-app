@@ -92,7 +92,7 @@ function App() {
         });
       }
       else {
-        console.log("Whoops, could not add a recipe")
+        console.error("Whoops, could not add a recipe")
       }
     }
     catch (e) {
@@ -145,7 +145,7 @@ function App() {
         console.log("Recipe updated!")
       }
       else {
-        console.log("Whoops, could not update recipe")
+        console.error("Whoops, could not update recipe")
       }
     }
     catch (e) {
