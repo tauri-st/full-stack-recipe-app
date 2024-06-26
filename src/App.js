@@ -190,7 +190,7 @@ function App() {
     if (action === "update") {
       selectedRecipe({ ...selectedRecipe, [name]: value });
     }
-    else {
+    else if (action === "new") {
       setNewRecipe({ ...newRecipe, [name]: value });
     }
   };
