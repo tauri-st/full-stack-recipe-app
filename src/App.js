@@ -120,14 +120,18 @@ function App() {
   };
 
   /**
-   * Destructure the name and value properties from the e.target object. 
-   * Pass an object to our setNewRecipe updater function, 
-   * spread into it the current state attributes …newRecipe, 
-   * overwriting the specific attribute that we are changing [name] 
-   * with the value of the input. 
-   * The [] around [name] indicates that it should accept a dynamic value
+   * * Destructure the name and value properties from the e.target object. 
+   * * Pass an object to our setNewRecipe updater function, 
+   * * spread into it the current state attributes …newRecipe, 
+   * * overwriting the specific attribute that we are changing [name] 
+   * * with the value of the input. 
+   * * The [] around [name] indicates that it should accept a dynamic value
+   * * action="new" assigns a default value of “new” to the action parameter
+   * * if the parameter wasn’t provided to the function when it is called. 
+   * * This action will either be “new” or “update” and will allow us to 
+   * * choose the appropriate next step.
   */
-  const onUpdateForm = (e) => {
+  const onUpdateForm = (e, action = "new") => {
     const { name, value } = e.target;
     setNewRecipe({ ...newRecipe, [name]: value });
   };
