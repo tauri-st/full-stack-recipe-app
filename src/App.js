@@ -205,7 +205,12 @@ function App() {
           onUpdateForm={onUpdateForm}
           handleNewRecipe={handleNewRecipe}
         />}
-      {selectedRecipe && <RecipeFull selectedRecipe={selectedRecipe} handleUnselectRecipe={handleUnselectRecipe} />}
+      {selectedRecipe && 
+        <RecipeFull 
+          selectedRecipe={selectedRecipe} 
+          handleUnselectRecipe={handleUnselectRecipe}
+          handleUpdateRecipe={handleUpdateRecipe}
+        />}
       {status === "error" && (
         <p>"Something went wrong"</p>
       )}
