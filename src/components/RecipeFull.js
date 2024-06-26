@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X } from "react-feather"
 import EditRecipeForm from "./components/EditRecipeForm";
 
 const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
+
+    const [editing, setEditing] = useState(false);
 
     return (
         <div className='recipe-details'>
