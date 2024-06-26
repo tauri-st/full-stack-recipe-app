@@ -7,7 +7,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
     const [editing, setEditing] = useState(false);
 
     const handleCancel = () => {
-        
+        setEditing(false)
     }
 
     return (
@@ -19,7 +19,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
                     </figure>
                     <h2>{selectedRecipe.title}</h2>
                     <div className='button-container'>
-                        <button className='edit-button'>Edit</button>
+                        <button className='edit-button' onClick={() => setEditing(false)}>Edit</button>
                         <button className='cancel-button' onClick={handleUnselectRecipe}>
                             <X />
                             Close
