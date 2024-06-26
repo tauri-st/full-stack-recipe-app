@@ -16,7 +16,8 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
             <div className='recipe-details'>
 	            {editing? (
                     <EditRecipeForm 
-                        // props for EditRecipeForm here
+                        selectedRecipe={selectedRecipe}
+                        handleCancel={handleCancel}
                     />
                 ) : (
                     <article>
