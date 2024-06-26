@@ -101,6 +101,60 @@ function App() {
     }
   };
 
+  /**
+   * *To update recipe, make the API call, update recipes state, 
+   * * pass to EditRecipeForm to submit
+  */
+
+  const handleUpdateRecipe = async (e, selectedRecipe) => {
+    e.preventDefault();
+    const { id } = selectedRecipe;
+    try {
+      /*
+        * Pass an additional arguement {} that is an object called "options"
+        * Parse the JSON into a Python dictionary
+        * Create a new database record
+        * The API will send back the saved recipe as JSON with an ID assigned to it
+      */ 
+      const response = await fetch("/api/recipes/{$id}", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(selectedRecipe)
+      });
+      if (response.ok) {
+        setStatus("success");
+        // * Send newRecipe data as JSON to our API endpoint
+        const data = await response.json();
+        /**
+         * * map over the existing recipes in state. If the recipe has the 
+         * * same id as the selectedRecipe‘s id, we’ll return the recipe 
+         * * object inside the data that we received as a response from our 
+         * * API: data.recipe. Otherwise, we’ll return the recipe as it is.
+        */
+        setRecipes(
+          recipes.map((recipe) => {
+            if (recipe.id === id) {
+              // * Return the saved data from the db
+              return data.recipe
+            }
+            return recipe;
+          })
+        );
+        console.log("Recipe updated!")
+      }
+      else {
+        console.log("Whoops, could not update recipe")
+      }
+    }
+    catch (e) {
+      console.error("Something went wrong", e)
+      setStatus("error");
+      selectedRecipe(null);
+    }
+  };
+
   const handleSelectRecipe = (recipe) => {
     setSelectedRecipe(recipe);
   };
