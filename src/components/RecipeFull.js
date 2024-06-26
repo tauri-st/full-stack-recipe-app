@@ -12,6 +12,19 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
 
     return (
         <div className='recipe-details'>
+            
+            <div className='recipe-details'>
+	            {editing? (
+                    <EditRecipeForm 
+                        // props for EditRecipeForm here
+                    />
+                ) : (
+                    <article>
+                    // full article stuff here
+                    </article>
+                )}
+            </div>
+
             <article>
                 <header>
                     <figure>
