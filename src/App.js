@@ -210,6 +210,7 @@ function App() {
           selectedRecipe={selectedRecipe} 
           handleUnselectRecipe={handleUnselectRecipe}
           handleUpdateRecipe={handleUpdateRecipe}
+          onUpdateForm={onUpdateForm}
         />}
       {status === "error" && (
         <p>"Something went wrong"</p>
