@@ -13,18 +13,16 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
     return (
         <div className='recipe-details'>
             
-            <div className='recipe-details'>
-	            {editing? (
-                    <EditRecipeForm 
-                        selectedRecipe={selectedRecipe}
-                        handleCancel={handleCancel}
-                    />
-                ) : (
-                    <article>
+	        {editing? (
+                <EditRecipeForm 
+                    selectedRecipe={selectedRecipe}
+                    handleCancel={handleCancel}
+                />
+            ) : (
+                <article>
                     // full article stuff here
-                    </article>
-                )}
-            </div>
+                </article>
+            )}
 
             <article>
                 <header>
