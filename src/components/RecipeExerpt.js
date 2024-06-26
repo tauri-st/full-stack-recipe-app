@@ -1,7 +1,3 @@
-/**
- * ? Ann used rafce to call up a React boilerplate, how??
-*/
-
 import React from 'react';
 
 const RecipeExerpt = ( {recipe, handleSelectRecipe} ) => {
