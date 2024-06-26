@@ -6,6 +6,10 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe} ) => {
 
     const [editing, setEditing] = useState(false);
 
+    const handleCancel = () => {
+        
+    }
+
     return (
         <div className='recipe-details'>
             <article>
