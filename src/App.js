@@ -153,7 +153,7 @@ function App() {
       setStatus("error");
     }
 
-    selectedRecipe(null);
+    setSelectedRecipe(null);
   };
 
   const handleSelectRecipe = (recipe) => {
