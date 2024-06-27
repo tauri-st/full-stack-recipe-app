@@ -170,7 +170,7 @@ function App() {
 
   const showRecipeForm = () => {
     setShowNewRecipeForm(true);
-    //show the recipe form OR the selected recipe, not both.
+    // * show the recipe form OR the selected recipe, not both.
     setSelectedRecipe(null);
   };
 
