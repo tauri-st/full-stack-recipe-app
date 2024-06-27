@@ -102,7 +102,7 @@ function App() {
   };
 
   /**
-   * *To update recipe, make the API call, update recipes state, 
+   * * To update recipe, make the API call, update recipes state, 
    * * pass to EditRecipeForm to submit
   */
 
@@ -137,15 +137,15 @@ function App() {
           recipes.map((recipe) => {
             if (recipe.id === id) {
               // * Return the saved data from the db
-              return data.recipe
+              return data.recipe;
             }
             return recipe;
           })
         );
-        console.log("Recipe updated!")
+        console.log("Recipe updated!");
       }
       else {
-        console.error("Whoops, could not update recipe")
+        console.error("Whoops, could not update recipe");
       }
     }
     catch (e) {
