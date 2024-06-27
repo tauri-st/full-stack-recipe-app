@@ -29,7 +29,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe, onUpdateForm, handle
                     <h2>{selectedRecipe.title}</h2>
                     <div className='button-container'>
                         <button className='edit-button' onClick={() => setEditing(true)}>Edit</button>
-                        <button className='cancel-button' onClick={handleUnselectRecipe(selectedRecipe)}>
+                        <button className='cancel-button' onClick={handleUnselectRecipe}>
                             <X />
                             Close
                         </button>
