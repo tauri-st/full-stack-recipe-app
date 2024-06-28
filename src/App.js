@@ -116,7 +116,7 @@ function App() {
         * Create a new database record
         * The API will send back the saved recipe as JSON with an ID assigned to it
       */ 
-      const response = await fetch("/api/recipes/${id}", {
+      const response = await fetch(`/api/recipes/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
