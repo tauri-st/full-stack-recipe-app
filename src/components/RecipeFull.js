@@ -6,11 +6,22 @@ import ConfirmationModal from "./ConfirmationModal";
 const RecipeFull = ( {selectedRecipe, handleUnselectRecipe, onUpdateForm, handleUpdateRecipe, handleDeleteRecipe } ) => {
 
     const [editing, setEditing] = useState(false);
+    const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
     const handleCancel = () => {
         setEditing(false)
     }
 
+    if (showConfirmationModal) {
+        return (
+            <div className="recipe-details">
+                < ConfirmationModal 
+                    message="Are you sure? Once it's gone, it's gone"
+                    onCancel={() => setShowConfirmationModal(false)}
+                    onConfirm={() => handleDeleteRecipe(selectedRecipe.id)}/>
+            </div>
+        )
+    }
     return (
         <div className='recipe-details'>
             
