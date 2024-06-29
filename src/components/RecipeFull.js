@@ -3,7 +3,7 @@ import { X } from "react-feather"
 import EditRecipeForm from "./EditRecipeForm";
 import ConfirmationModal from "./ConfirmationModal";
 
-const RecipeFull = ( {selectedRecipe, handleUnselectRecipe, onUpdateForm, handleUpdateRecipe} ) => {
+const RecipeFull = ( {selectedRecipe, handleUnselectRecipe, onUpdateForm, handleUpdateRecipe, handleDeleteRecipe } ) => {
 
     const [editing, setEditing] = useState(false);
 
