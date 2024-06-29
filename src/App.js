@@ -164,7 +164,7 @@ function App() {
       });
       if (response.ok) {
         setRecipes(recipes.filter((recipe) => recipe.id !== recipeId));
-        setSelectedRecipes(null);
+        setSelectedRecipe(null);
         console.log("Recipe deleted!")
       }
       else {
