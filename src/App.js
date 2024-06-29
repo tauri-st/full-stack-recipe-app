@@ -165,6 +165,7 @@ function App() {
       if (response.ok) {
         setRecipes(recipes.filter((recipe) => recipe.id !== recipeId));
         setSelectedRecipes(null);
+        console.log("Recipe deleted!")
       }
       else {
         console.error("Could not delete this recipe!")
@@ -230,6 +231,7 @@ function App() {
           selectedRecipe={selectedRecipe} 
           handleUnselectRecipe={handleUnselectRecipe}
           handleUpdateRecipe={handleUpdateRecipe}
+          handleDeleteRecipe={handleDeleteRecipe}
           onUpdateForm={onUpdateForm}
         />}
       {status === "error" && (
