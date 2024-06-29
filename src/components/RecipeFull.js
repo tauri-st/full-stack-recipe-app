@@ -16,9 +16,10 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe, onUpdateForm, handle
         return (
             <div className="recipe-details">
                 < ConfirmationModal 
-                    message="Are you sure? Once it's gone, it's gone"
+                    message="Are you sure? Once it's gone, it's gone."
                     onCancel={() => setShowConfirmationModal(false)}
-                    onConfirm={() => handleDeleteRecipe(selectedRecipe.id)}/>
+                    onConfirm={() => handleDeleteRecipe(selectedRecipe.id)}
+                />
             </div>
         )
     }
@@ -45,7 +46,7 @@ const RecipeFull = ( {selectedRecipe, handleUnselectRecipe, onUpdateForm, handle
                             <X />
                             Close
                         </button>
-                        <button className='delete-button'>Delete</button>
+                        <button className='delete-button' onClick={() => setShowConfirmationModal(true)}>Delete</button>
                     </div>
                 </header>
 
