@@ -217,6 +217,10 @@ function App() {
     }
   };
 
+  const updateSearchTerm = (searchText) => { 
+    setSearchTerm(searchText);
+   };
+
   return (
     <div className='recipe-app'>
       <Header showRecipeForm={showRecipeForm} />
