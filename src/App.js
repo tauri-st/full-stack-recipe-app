@@ -221,6 +221,22 @@ function App() {
     setSearchTerm(searchText);
    };
 
+  const handleSearch = () => { 
+    const searchResults = recipes.filter((recipe) => {
+      const valuesToSearch = [
+        recipe.title,
+        recipe.ingredients,
+        recipe.description
+      ];
+      /** 
+       ** the some method looks a lot like filter but it will return true
+       ** if any item it iterates over meets provided criteria
+      */
+      valuesToSearch.some(value => value.toLowerCase().includes(searchText.toLowerCase()));
+      return value;
+    });
+  };
+
   return (
     <div className='recipe-app'>
       <Header showRecipeForm={showRecipeForm} />
