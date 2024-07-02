@@ -232,8 +232,9 @@ function App() {
        ** the some method looks a lot like filter but it will return true
        ** if any item it iterates over meets provided criteria
       */
-      return valuesToSearch.some((values) => value.toLowerCase().includes(searchText.toLowerCase()));
+      return valuesToSearch.some((values) => value.toLowerCase().includes(searchTerm.toLowerCase()));
     });
+    return searchResults;
   };
 
   return (
