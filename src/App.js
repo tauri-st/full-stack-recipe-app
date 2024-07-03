@@ -264,7 +264,7 @@ function App() {
       {status === "success"}
       {!selectedRecipe && !showNewRecipeForm && (
         <div className="recipe-list">
-        {recipes.map((recipe) => {
+        {displayedRecipes.map((recipe) => {
           return <RecipeExerpt key={recipe.id} recipe={recipe} handleSelectRecipe={handleSelectRecipe} />
         })};
       </div>)}
