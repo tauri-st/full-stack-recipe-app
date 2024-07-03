@@ -254,7 +254,8 @@ function App() {
     <div className='recipe-app'>
       <Header 
         showRecipeForm={showRecipeForm}
-        updateSearchTerm={updateSearchTerm} 
+        updateSearchTerm={updateSearchTerm}
+        displayAllRecipes={displayAllRecipes} 
       />
       {showNewRecipeForm && 
         <NewRecipeForm 
