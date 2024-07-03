@@ -240,11 +240,6 @@ function App() {
   const displayedRecipes = searchTerm ? handleSearch() : recipes;
 
   const displayAllRecipes = () => {  
-    /*
-      TODO: Clear any search results
-      TODO: Make sure no recipe is currently selected
-      TODO: Make sure tthat the new recipe form isn't showing
-    */
     setSearchTerm("");
     setSelectedRecipe(null);
     setShowNewRecipeForm(false);
