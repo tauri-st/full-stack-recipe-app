@@ -237,6 +237,8 @@ function App() {
     return searchResults;
   };
 
+  const displayedRecipes = searchTerm ? handleSearch() : recipes;
+
   return (
     <div className='recipe-app'>
       <Header showRecipeForm={showRecipeForm} />
