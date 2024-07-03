@@ -6,6 +6,9 @@ const truncateText = (text, numWords=20) => {
         TODO: Add ellipsis
     * Will need to go from string to an array back to a string again
     */
-   if (text.length <= numWords)
-    return text;
+    if (text.length <= numWords) {
+        return text;
+    } else {
+        
+    }
 };
