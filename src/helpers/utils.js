@@ -1,4 +1,4 @@
-const truncateText = (text, numWords=20) => { 
+export const truncateText = (text, numWords=20) => { 
     if (text.length <= numWords) {
         return text;
     } else {

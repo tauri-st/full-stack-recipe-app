@@ -1,5 +1,5 @@
 import React from 'react';
-import truncateText from "../helpers/utils";
+import { truncateText } from "../helpers/utils";
 
 const RecipeExerpt = ( {recipe, handleSelectRecipe} ) => {
     return (
