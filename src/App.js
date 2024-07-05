@@ -52,7 +52,7 @@ function App() {
         console.log(recipes);
       }
       catch (e) {
-        console.log("Something went wrong", e)
+        displayToast("Oops, could not fetch recipes!", "error");
         setStatus("error");
       }
     };
@@ -98,11 +98,11 @@ function App() {
         displayToast("Recipe added successfully!", "success");
       }
       else {
-        console.error("Whoops, could not add a recipe")
+        displayToast("Oops, could not add recipe!", "error");
       }
     }
     catch (e) {
-      console.error("Something went wrong", e)
+      displayToast("Oops, could not add recipe!", "error");
       setStatus("error");
     }
   };
@@ -151,11 +151,11 @@ function App() {
         displayToast("Recipe updated successfully!", "success");
       }
       else {
-        console.error("Whoops, could not update recipe");
+        displayToast("Oops, could not update recipe!", "error");
       }
     }
     catch (e) {
-      console.error("Something went wrong", e)
+      displayToast("Oops, could not update recipe!", "error");
       setStatus("error");
     }
 
@@ -178,7 +178,7 @@ function App() {
       }
     }
     catch (e) {
-      console.error("Something went wrong", e)
+      displayToast("Oops, could not delete recipe!", "error");
     }
   };
 
