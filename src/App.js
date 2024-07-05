@@ -281,6 +281,7 @@ function App() {
           return <RecipeExerpt key={recipe.id} recipe={recipe} handleSelectRecipe={handleSelectRecipe} />
         })};
       </div>)}
+      < ToastContainer />
     </div>
   );
 }
