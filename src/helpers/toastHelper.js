@@ -1,5 +1,5 @@
 import {toast} from 'react-toastify';
 
-const displayToast = (message, type) => { 
+const displayToast = (message, type=success) => { 
 
 };
