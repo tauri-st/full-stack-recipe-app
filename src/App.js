@@ -44,6 +44,7 @@ function App() {
         if (request.ok) {
           setRecipes(data);
           setStatus("success");
+          displayToast("All recipes fetched successfully!", "success");
         }
         else {
           console.log("Could not fetch recipes");
@@ -94,6 +95,7 @@ function App() {
           description: "",
           image_url: "https://images.pexels.com/photos/9986228/pexels-photo-9986228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         });
+        displayToast("Recipe added successfully!", "success");
       }
       else {
         console.error("Whoops, could not add a recipe")
@@ -146,7 +148,7 @@ function App() {
             return recipe;
           })
         );
-        console.log("Recipe updated!");
+        displayToast("Recipe updated successfully!", "success");
       }
       else {
         console.error("Whoops, could not update recipe");
@@ -169,7 +171,7 @@ function App() {
       if (response.ok) {
         setRecipes(recipes.filter((recipe) => recipe.id !== recipeId));
         setSelectedRecipe(null);
-        console.log("Recipe deleted!")
+        displayToast("Recipe deleted successfully!", "success");
       }
       else {
         console.error("Could not delete this recipe!")
