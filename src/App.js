@@ -44,7 +44,7 @@ function App() {
         if (request.ok) {
           setRecipes(data);
           setStatus("success");
-          displayToast("All recipes fetched successfully!", "success");
+          displayToast("Here are your recipes!", "success");
         }
         else {
           console.log("Could not fetch recipes");
